@@ -3,7 +3,7 @@
 	"version" : "0.1.0",
 	"description" : "Calendar and Date objects to handle business days, holidays and weekends",
 	"author" : "shinobi-cl",
-	"depends" : [ ],
+	"depends" : [],
 	"source-url" : "git@github.com:shinobi/Date-WorkdayCalendar.git"
 }
 
