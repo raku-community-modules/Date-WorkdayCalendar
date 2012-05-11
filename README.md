@@ -14,3 +14,5 @@ More information about workweeks can be found at
 http://en.wikipedia.org/wiki/Workweek
 
 Detailed documentation is available at https://github.com/shinobi/Date-WorkdayCalendar/wiki
+
+Please send comments and ideas to shinobi.cl_<at>_gmail.com 
