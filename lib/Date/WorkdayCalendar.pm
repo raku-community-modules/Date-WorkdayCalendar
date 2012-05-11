@@ -377,11 +377,11 @@ Another example:
 
 =head2 C<method new>
 
- my $wd1 = Workdate.new(year=>2000, month=>12, day=>01, calendar=>$filename);
- my $wd2 = Workdate.new(2000, 12, 01, $filename);
- my $wd3 = Workdate.new($aDateString, $filename);
- my $wd4 = Workdate.new($aDateTimeObject, $filename);
- my $wd4 = Workdate.new($aDateObject, $filename);
+ my $wd1 = Workdate.new(year=>2000, month=>12, day=>01, calendar=>$aWorkdayCalendar);
+ my $wd2 = Workdate.new(2000, 12, 01, $aWorkdayCalendar);
+ my $wd3 = Workdate.new($aDateString, $aWorkdayCalendar);
+ my $wd4 = Workdate.new($aDateTimeObject, $aWorkdayCalendar);
+ my $wd4 = Workdate.new($aDateObject, $aWorkdayCalendar);
 
 
 We try to provide the same constructors as the base Date class, plus another to 
