@@ -1,4 +1,4 @@
-The WorkdayCalendar and Workday objects allows to perform date calculations on a calendar 
+The WorkdayCalendar and Workdate objects allows to perform date calculations on a calendar 
 that considers workdays (also called "business days").
 
 Built on top of the Date datatype, it uses a calendar file to specify how 
