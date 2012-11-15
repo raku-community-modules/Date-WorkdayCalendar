@@ -45,15 +45,21 @@ class WorkdayCalendar {
                 when 'W' {
                     try {
                         my @workweek_spec = split /','/, $data; 
+                        my $workweek_spec_failed = False;
                         for @workweek_spec -> $weekday {
-                            warn "Workday '$weekday' not recognized" unless $weekday eq any(<Mon Tue Wed Thu Fri Sat Sun>);
+                            if ($weekday ne any(<Mon Tue Wed Thu Fri Sat Sun>)) {
+                                warn "Workday '$weekday' not recognized";
+                                $workweek_spec_failed = True;
+                                last;
+                            }
                         }
-                        @.workdays = @workweek_spec;
-                        CONTROL {
+                        if ($workweek_spec_failed) {
                             note "ERROR: Workweek specification not valid. Assuming Mon,Tue,Wed,Thu,Fri";
                             @.workdays = <Mon Tue Wed Thu Fri>;
-                            next;    
-                        }    
+                            next;
+                        } else {
+                            @.workdays = @workweek_spec;    
+                        }
                     }
                 }                 
             }
@@ -210,7 +216,7 @@ multi infix:<eq>(WorkdayCalendar:D $wc1, WorkdayCalendar:D $wc2) is export {
     #--- No support for typed arrays yet AFAIK. Have to compare them in a "stringy" way
     my Str (@wc1_string_holidays, @wc2_string_holidays);
     push @wc1_string_holidays, "{$_.year}-{$_.month}-{$_.day}" for $wc1.holidays;
-    push @wc2_string_holidays, "{$_.year}-{$_.month}-{$_.day}" for $wc2.holidays;    
+    push @wc2_string_holidays, "{$_.year}-{$_.month}-{$_.day}" for $wc2.holidays;        
     my Bool $same_workdays = ($wc1.workdays ~~ $wc2.workdays);    
     my Bool $same_holidays = (@wc1_string_holidays ~~ @wc2_string_holidays);
     return ?( $same_workdays && $same_holidays );
@@ -330,7 +336,7 @@ Works like the C<workdays-to> method, but emulates the NETWORKDAYS function in
 Microsoft Excel.
 
  Examples
-    Start     Target    workdays-to	 networkdays
+    Start     Target    workdays-to     networkdays
  2011-07-07  2011-07-14     5              6
  2011-07-07  2011-07-07     0              1
  2011-07-07  2011-07-08     1              2
