@@ -4,6 +4,10 @@
 	"description" : "Calendar and Date objects to handle business days, holidays and weekends",
 	"author" : "shinobi-cl",
 	"depends" : [],
+	"provides" : {
+	        "WorkdayCalendar" : "lib/Date/WorkdayCalendar.pm",
+	        "Workdate" : "lib/Date/WorkdayCalendar.pm"
+	},
 	"source-url" : "git://github.com/shinobi/Date-WorkdayCalendar.git"
 }
 
