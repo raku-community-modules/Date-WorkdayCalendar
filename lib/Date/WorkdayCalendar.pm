@@ -215,9 +215,9 @@ class Workdate is Date {
 multi infix:<eq>(WorkdayCalendar:D $wc1, WorkdayCalendar:D $wc2) is export {
     #--- No support for typed arrays yet AFAIK. Have to compare them in a "stringy" way
     my Str (@wc1_string_holidays, @wc2_string_holidays);
-    push @wc1_string_holidays, "{$_.year}-{$_.month}-{$_.day}" for $wc1.holidays;
-    push @wc2_string_holidays, "{$_.year}-{$_.month}-{$_.day}" for $wc2.holidays;        
-    my Bool $same_workdays = ($wc1.workdays ~~ $wc2.workdays);    
+    for $wc1.holidays { push @wc1_string_holidays, "{$_.year}-{$_.month}-{$_.day}" };
+    for $wc2.holidays { push @wc2_string_holidays, "{$_.year}-{$_.month}-{$_.day}" };
+    my Bool $same_workdays = ($wc1.workdays ~~ $wc2.workdays);
     my Bool $same_holidays = (@wc1_string_holidays ~~ @wc2_string_holidays);
     return ?( $same_workdays && $same_holidays );
 }
