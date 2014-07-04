@@ -8,6 +8,6 @@
 	        "WorkdayCalendar" : "lib/Date/WorkdayCalendar.pm",
 	        "Workdate" : "lib/Date/WorkdayCalendar.pm"
 	},
-	"source-url" : "git://github.com/shinobi/Date-WorkdayCalendar.git"
+	"source-url" : "git://github.com/perl6-community-modules/Date-WorkdayCalendar.git"
 }
 
