@@ -79,8 +79,8 @@ class WorkdayCalendar {
 
     method is-holiday(Date $day) {
         my @daycounts;
-        push @daycounts, $_.get-daycount for @.holidays;
-        return ?($day.get-daycount == any(@daycounts));
+        push @daycounts, $_.daycount for @.holidays;
+        return ?($day.daycount == any(@daycounts));
     }
 
     method workdays-away(Date $start, Int $days) {
@@ -96,8 +96,8 @@ class WorkdayCalendar {
     }
 
     method workdays-to(Date $start is copy, Date $target is copy) {
-        return 0 if $start.get-daycount == $target.get-daycount;
-        my $sign = ($start.get-daycount < $target.get-daycount) ?? +1
+        return 0 if $start.daycount == $target.daycount;
+        my $sign = ($start.daycount < $target.daycount) ?? +1
                                                                 !! -1;
         my Date $current_day = $start;
         my Int $count = 0;
@@ -105,17 +105,17 @@ class WorkdayCalendar {
             $current_day = ($sign == +1) ?? $current_day.Date::succ
                                          !! $current_day.Date::pred;
             $count++ if self.is-workday($current_day);
-        } until ($current_day.get-daycount == $target.get-daycount);
+        } until ($current_day.daycount == $target.daycount);
         return ($count * $sign);
     }
     
     method networkdays(Date $start is copy, Date $target is copy) {
-        if $start.get-daycount == $target.get-daycount {
+        if $start.daycount == $target.daycount {
              return (self.is-workday($start)) ?? 1
                                               !! 0;
         }
         my $sign = +1;
-        if $start.get-daycount > $target.get-daycount {
+        if $start.daycount > $target.daycount {
             $sign = -1;
             my Date $aux_day = $start;
             $start = $target;
@@ -123,7 +123,7 @@ class WorkdayCalendar {
         }
         my Date $current_day = $start;
         my Int $count = 0;
-        while ($current_day.get-daycount <= $target.get-daycount) {
+        while ($current_day.daycount <= $target.daycount) {
             $count++ if self.is-workday($current_day);
             $current_day = $current_day.Date::succ;    
         } 
@@ -132,10 +132,10 @@ class WorkdayCalendar {
     
     method range(Date $begin, Date $end) {      
         my Date @slice;
-        my Int $from = ($begin.get-daycount, $end.get-daycount).min;
-        my Int $to   = ($begin.get-daycount, $end.get-daycount).max;
+        my Int $from = ($begin.daycount, $end.daycount).min;
+        my Int $to   = ($begin.daycount, $end.daycount).max;
         for (@.holidays) -> $date { #--- The holidays are already sorted
-            push @slice, $date if ($from <= $date.get-daycount <= $to);
+            push @slice, $date if ($from <= $date.daycount <= $to);
         }
         my $result_calendar = self.clone; #-- Requires a customized version of clone
         $result_calendar.holidays = @slice;

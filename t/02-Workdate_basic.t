@@ -54,7 +54,7 @@ diag "Testing Workdate class, using $FILE_CAL_CORRECT";
 my Workdate $w_date = Workdate.new('2011-12-09', $calendar);
 
 ok (
-    $w_date.WHAT eq 'Workdate()',
+    $w_date.WHAT.^name eq 'Workdate()',
     'Type "Workdate" correct'
 );
 say $w_date.^attributes.list;
