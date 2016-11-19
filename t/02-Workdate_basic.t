@@ -76,7 +76,7 @@ is( #--- Friday to Wednesday (Thursday is holiday)
 );
 is( #--- method workdays-to with one parameter
     $w_date.workdays-to( Date.new('2011-12-07') ), -1,
-    "Workdate class: workdays-to method" 
+    "Workdate class: workdays-to method"
 );
 is( #--- method networkdays with one parameter
     $w_date.networkdays( Date.new('2011-12-07') ), -2,
@@ -84,7 +84,7 @@ is( #--- method networkdays with one parameter
 );
 
 my $w_date2 = Workdate.new('2011-12-09');
-$calendar.clear; 
+$calendar.clear;
 is( #--- No holidays specified
     $w_date2.pred, Date.new('2011-12-08'),
     "Workdate class: 'Clear' calendar with no holidays"
