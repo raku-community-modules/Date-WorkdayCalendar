@@ -95,3 +95,4 @@ is( #--- Friday to Monday, no holidays
     "Workdate class: Using default calendar with no holidays and default workweek"
 );
 
+# vim: ft=perl6

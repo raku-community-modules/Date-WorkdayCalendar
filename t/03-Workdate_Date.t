@@ -45,3 +45,5 @@ is( #--- Minus operator; two Workdates
     ($wd2 - $wd1), 2,
     "Workdate - Workdate"
 );
+
+# vim: ft=perl6

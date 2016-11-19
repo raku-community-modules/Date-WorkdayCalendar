@@ -445,5 +445,6 @@ Returns the opposite of C<eq>
 
 Returns the difference, in workdays, between $wd1 and $wd2
 
-
 =end pod
+
+# vim: ft=perl6

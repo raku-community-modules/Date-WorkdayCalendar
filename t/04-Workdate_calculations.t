@@ -59,3 +59,5 @@ for (@tests) -> $line {
         "Workdate calculations : networkdays($d2, $d1) == $NW2"
     );
 };
+
+# vim: ft=perl6
