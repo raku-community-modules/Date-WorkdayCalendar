@@ -45,8 +45,8 @@ More information about workweeks can be found at
     $workdate.is-weekend;  # False
     $workdate.is-holiday;  # False
 
-Detailed documentation is available at
-<https://github.com/shinobi/Date-WorkdayCalendar/wiki>.
+Detailed documentation is available in the [source code's
+POD](https://github.com/perl6-community-modules/Date-WorkdayCalendar/blob/master/lib/Date/WorkdayCalendar.pm).
 
 Comments, ideas and issues can be submitted to the [GitHub issue
 tracker](https://github.com/perl6-community-modules/Date-WorkdayCalendar/issues)
