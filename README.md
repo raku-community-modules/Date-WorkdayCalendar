@@ -1,5 +1,7 @@
 # Date::WorkdayCalendar
 
+[![Build Status](https://travis-ci.org/perl6-community-modules/Date-WorkdayCalendar.svg?branch=master)](https://travis-ci.org/perl6-community-modules/Date-WorkdayCalendar)
+
 The `WorkdayCalendar` and `Workdate` objects allow date calculations to be
 made on a calendar that considers workdays (also called "business days").
 
