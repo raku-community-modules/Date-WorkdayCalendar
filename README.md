@@ -1,3 +1,5 @@
+# Date::WorkdayCalendar
+
 The `WorkdayCalendar` and `Workdate` objects allow date calculations to be
 made on a calendar that considers workdays (also called "business days").
 
@@ -12,6 +14,34 @@ different ones.
 
 More information about workweeks can be found at
 <http://en.wikipedia.org/wiki/Workweek>.
+
+## Usage
+
+    use v6;
+    use Date::WorkdayCalendar;
+
+    # construct a default workday calendar
+    my $calendar = WorkdayCalendar.new;
+
+    # work out the next workday away from the given date
+    # 2016-11-18 is a Friday
+    $calendar.workdays-away(Date.new('2016-11-18'), 1);  # 2016-11-21
+
+    # construct a workday calendar from a file
+    my $calendar-from-file = WorkdayCalendar.new('days.cal');
+
+    # create a workdate from a date string
+    my $workdate = Workdate.new('2016-05-02');
+
+    # create a workdate from a Date object
+    my $date = Date.new('2016-11-18');
+    my $workdate-from-date = Workdate.new($date);
+
+    # is the day a workday?
+    $workdate = Workdate.new('2016-11-18');
+    $workdate.is-workday;  # True
+    $workdate.is-weekend;  # False
+    $workdate.is-holiday;  # False
 
 Detailed documentation is available at
 <https://github.com/shinobi/Date-WorkdayCalendar/wiki>.
