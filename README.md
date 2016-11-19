@@ -61,3 +61,19 @@ To install this module, simply use either `panda`:
 or `zef`:
 
     zef install Date::WorkdayCalendar
+
+## Author
+
+The original author of the module was shinobi <shinobi.cl@gmail.com>.  The
+module is now maintained by The Perl6 Community.
+
+## Copyright and License
+
+Copyright 2012-2013 shinobi <shinobi.cl@gmail.com>
+
+Copyright 2014-2016 The Perl6 Community
+
+This program is distributed under the terms of the Artistic License 2.0.
+
+For further information, please see the LICENSE file or visit
+<http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt>.
