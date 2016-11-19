@@ -62,6 +62,19 @@ or `zef`:
 
     zef install Date::WorkdayCalendar
 
+## Development
+
+To develop the code, clone the source code repository from GitHub:
+
+    git clone git@github.com:perl6-community-modules/Date-WorkdayCalendar.git
+
+## Testing
+
+To run the test suite on a local copy of the source code, use the following
+command:
+
+    prove -r --exec="perl6 -Ilib" t/
+
 ## Author
 
 The original author of the module was shinobi <shinobi.cl@gmail.com>.  The
