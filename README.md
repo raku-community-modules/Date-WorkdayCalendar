@@ -19,3 +19,13 @@ Detailed documentation is available at
 Comments, ideas and issues can be submitted to the [GitHub issue
 tracker](https://github.com/perl6-community-modules/Date-WorkdayCalendar/issues)
 or discussed on the #perl6 channel on irc.freenode.net.
+
+## Installation
+
+To install this module, simply use either `panda`:
+
+    panda install Date::WorkdayCalendar
+
+or `zef`:
+
+    zef install Date::WorkdayCalendar
