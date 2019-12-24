@@ -5,6 +5,8 @@ use Date::WorkdayCalendar;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
+my $*TESTING = True;
+
 diag "Testing workdays-to v/s net-workdays, using $FILE_CAL_CORRECT";
 
 my WorkdayCalendar $calendar .= new($FILE_CAL_CORRECT);

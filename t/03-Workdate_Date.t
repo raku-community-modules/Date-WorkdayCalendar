@@ -5,6 +5,8 @@ use Date::WorkdayCalendar;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
+my $*TESTING = True;
+
 diag "Testing the creation of a Workdate from a Date";
 my Date $d .= new('2000-06-20');
 my Workdate $wd .= new($d);

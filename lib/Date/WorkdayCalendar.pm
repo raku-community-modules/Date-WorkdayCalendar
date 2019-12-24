@@ -37,7 +37,7 @@ class WorkdayCalendar {
                     try {
                         push @.holidays, Date.new("$year-$month-$day");;
                         CATCH {
-                            note "ERROR: Specifying holiday date. Date $year-$month-$day skipped";
+                            $*TESTING || note "ERROR: Specifying holiday date. Date $year-$month-$day skipped";
                             next;
                         }
                     }
@@ -48,13 +48,13 @@ class WorkdayCalendar {
                         my $workweek_spec_failed = False;
                         for @workweek_spec -> $weekday {
                             if ($weekday ne any(<Mon Tue Wed Thu Fri Sat Sun>)) {
-                                warn "Workday '$weekday' not recognized";
+                                $*TESTING || warn "Workday '$weekday' not recognized";
                                 $workweek_spec_failed = True;
                                 last;
                             }
                         }
                         if ($workweek_spec_failed) {
-                            note "ERROR: Workweek specification not valid. Assuming Mon,Tue,Wed,Thu,Fri";
+                            $*TESTING || note "ERROR: Workweek specification not valid. Assuming Mon,Tue,Wed,Thu,Fri";
                             @.workdays = <Mon Tue Wed Thu Fri>;
                             next;
                         } else {

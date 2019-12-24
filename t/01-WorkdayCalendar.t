@@ -7,6 +7,7 @@ my $FILE_CAL_CORRECT     = 't/res/CORRECT.cal';
 my $FILE_CAL_WITH_ERRORS = 't/res/WITH_ERRORS.cal';
 my $FILE_CAL_SHORT_WEEK  = 't/res/SHORT_WEEK.cal';
 
+my $*TESTING = True;
 #------------------------------------------------------------------------------#
 diag 'Testing WorkdayCalendar constructors';
 lives-ok {

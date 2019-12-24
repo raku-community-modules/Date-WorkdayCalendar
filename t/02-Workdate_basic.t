@@ -5,6 +5,8 @@ use Date::WorkdayCalendar;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
+my $*TESTING = True;
+
 diag "Testing Workdate constructors, no calendar specified";
 lives-ok(
     { my $wd = Workdate.new(year=>2012, day=>20, month=>1) },
