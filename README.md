@@ -54,37 +54,31 @@ or discussed on the #perl6 channel on irc.freenode.net.
 
 ## Installation
 
-To install this module, simply use either `panda`:
-
-    panda install Date::WorkdayCalendar
-
-or `zef`:
-
     zef install Date::WorkdayCalendar
 
 ## Development
 
 To develop the code, clone the source code repository from GitHub:
 
-    git clone git@github.com:perl6-community-modules/Date-WorkdayCalendar.git
+    git clone git@github.com:raku-community-modules/Date-WorkdayCalendar.git
 
 ## Testing
 
 To run the test suite on a local copy of the source code, use the following
 command:
 
-    prove -r --exec="perl6 -Ilib" t/
+    prove -r --exec="raku -Ilib" t/
 
 ## Author
 
 The original author of the module was shinobi <shinobi.cl@gmail.com>.  The
-module is now maintained by The Perl6 Community.
+module is now maintained by The Raku Community.
 
 ## Copyright and License
 
 Copyright 2012-2013 shinobi <shinobi.cl@gmail.com>
 
-Copyright 2014-2016 The Perl6 Community
+Copyright 2014-2016 The Raku Community
 
 This program is distributed under the terms of the Artistic License 2.0.
 
