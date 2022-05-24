@@ -1,7 +1,7 @@
-use v6;
-use Test; plan 34;
-
+use Test;
 use Date::WorkdayCalendar;
+
+plan 34;
 
 my $FILE_CAL_CORRECT     = 't/res/CORRECT.cal';
 my $FILE_CAL_WITH_ERRORS = 't/res/WITH_ERRORS.cal';
@@ -187,4 +187,4 @@ is(
     "Calendar has fallen back to the default weekdays"
 );
 
-# vim: ft=perl6
+# vim: expandtab shiftwidth=4

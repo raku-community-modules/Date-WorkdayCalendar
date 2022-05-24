@@ -1,7 +1,7 @@
-use v6;
-use Test; plan 4 * 17;
-
+use Test;
 use Date::WorkdayCalendar;
+
+plan 4 * 17;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
@@ -62,4 +62,4 @@ for (@tests) -> $line {
     );
 };
 
-# vim: ft=perl6
+# vim: expandtab shiftwidth=4

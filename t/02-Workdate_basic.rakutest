@@ -1,7 +1,7 @@
-use v6;
-use Test; plan 18;
-
+use Test;
 use Date::WorkdayCalendar;
+
+plan 18;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
@@ -97,4 +97,4 @@ is( #--- Friday to Monday, no holidays
     "Workdate class: Using default calendar with no holidays and default workweek"
 );
 
-# vim: ft=perl6
+# vim: expandtab shiftwidth=4

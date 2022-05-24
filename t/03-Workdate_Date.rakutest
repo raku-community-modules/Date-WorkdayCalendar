@@ -1,7 +1,7 @@
-use v6;
-use Test; plan 7;
-
+use Test;
 use Date::WorkdayCalendar;
+
+plan 7;
 
 my $FILE_CAL_CORRECT = 't/res/CORRECT.cal';
 
@@ -48,4 +48,4 @@ is( #--- Minus operator; two Workdates
     "Workdate - Workdate"
 );
 
-# vim: ft=perl6
+# vim: expandtab shiftwidth=4

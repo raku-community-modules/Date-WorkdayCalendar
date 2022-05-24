@@ -1,20 +1,30 @@
 {
-  "name": "Date::WorkdayCalendar",
-  "source-url": "git://github.com/perl6-community-modules/Date-WorkdayCalendar.git",
-  "perl": "6.*",
-  "authors": [ "github:shinobi" ],
-  "auth": "github:shinobi",
-  "depends": [
-    
+  "api": "1.0",
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "shinobi"
   ],
-  "license": "Artistic-2.0",
-  "provides": {
-    "Date::Workdate": "lib/Date/WorkdayCalendar.pm",
-    "Date::WorkdayCalendar": "lib/Date/WorkdayCalendar.pm"
-  },
-  "version": "0.1.1",
-  "api" : "1.0",
-  "tags" : [ "date", "workday" , "calendar"],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
   "description": "Calendar and Date objects to handle business days, holidays and weekends",
-   "meta-version" : 0
+  "license": "Artistic-2.0",
+  "meta-version": 0,
+  "name": "Date::WorkdayCalendar",
+  "perl": "6.*",
+  "provides": {
+    "Date::WorkdayCalendar": "lib/Date/WorkdayCalendar.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/perl6-community-modules/Date-WorkdayCalendar.git",
+  "tags": [
+    "DATE",
+    "WORKDAY",
+    "CALENDAR"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1.2"
 }
