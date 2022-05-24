@@ -75,11 +75,11 @@ If the `W:` specification is incorrect, the default workweek (**Mon**, **Tue**, 
 
 Lines starting with `#` are comments and will be ignored when parsing the file.
 
-`WorkdayCalendar` class
-=======================
+WorkdayCalendar class
+=====================
 
-`method new`
-------------
+method new
+----------
 
 ```raku
 my $wdc1 = WorkdayCalendar.new;
@@ -88,33 +88,33 @@ my $wdc2 = WorkdayCalendar.new('calendar.cal');
 
 Creates a new calendar. Optionally, accepts the name of a file using the calendar format specified above. If a filename is not specified, the calendar will have no holidays and a default workweek of **Mon**, **Tue**, **Wed**, **Thu**, **Fri**.
 
-`method clear`
---------------
+method clear
+------------
 
 Empties the information for holidays and workdays, and resets the workweek to the default: **Mon**, **Tue**, **Wed**, **Thu**, **Fri**.
 
-`method read(Str $calendar_filename)`
--------------------------------------
+method read(Str $calendar_filename)
+-----------------------------------
 
 Reads the data of holidays and workdays from a calendar file.
 
-`method is-workday(Date $day)`
-------------------------------
+method is-workday(Date $day)
+----------------------------
 
 Returns `True` if the day is part of the workweek and not a holiday.
 
-`method is-weekend(Date $day)`
-------------------------------
+method is-weekend(Date $day)
+----------------------------
 
 Returns `True` if the day is not part of the workweek.
 
-`method is-holiday(Date $day)`
-------------------------------
+method is-holiday(Date $day)
+----------------------------
 
 Returns `True` if the day has been defined as holiday in the calendar file.
 
-`method workdays-away(Date $start, Int $days)`
-----------------------------------------------
+method workdays-away(Date $start, Int $days)
+--------------------------------------------
 
 Returns a `Date` that corresponds to the workday at which `$days` working days have passed. With this method you can ask questions like: "what is the next working day for some date?" or "what is the previous working day of some date?" or "what date is 2 working days from a date?".
 
@@ -132,13 +132,13 @@ Considering the workdays = **Mon Tue Wed Thu Fri**...
 
 This also works for a negative number of days.
 
-`method workdays-to(Date $start, Date $target)`
------------------------------------------------
+method workdays-to(Date $start, Date $target)
+---------------------------------------------
 
 Returns the 'distance', in workdays, of `$start` and `$target` dates.
 
-`method networkdays(Date $start, Date $target)`
------------------------------------------------
+method networkdays(Date $start, Date $target)
+---------------------------------------------
 
 Works like the `workdays-to` method, but emulates the NETWORKDAYS function in Microsoft Excel.
 
@@ -153,13 +153,13 @@ Examples:
     2011-01-01  2011-01-02     0              0
     2011-01-01  2011-01-03     1              1
 
-`method range(Date $start, Date $end)`
---------------------------------------
+method range(Date $start, Date $end)
+------------------------------------
 
 Returns a part of a calendar as a new `WorkdayCalendar` object, between the `$start` and `$end` dates, inclusive. For example, if you have a calendar that contains holiday information for 3 years, you can use `range` to obtain a new calendar that covers a period of 6 months of these 3 years. Useful with the `eq` operator for `WorkdayCalendar` objects.
 
-`method raku`
--------------
+method raku
+-----------
 
 Returns a string representing the contents of the `WorkdayCalendar` attributes.
 
@@ -188,8 +188,8 @@ my $date = Workdate.new(year=>2011, month=>02, day=>01, calendar=>$CAL);
 my $next_day = $date.succ; # $next_day is Thursday, February 3, 2011
 ```
 
-`method new`
-------------
+method new
+----------
 
 ```raku
 my $wd1 = Workdate.new(year=>2000, month=>12, day=>01, calendar=>$aWorkdayCalendar);
@@ -201,63 +201,63 @@ my $wd4 = Workdate.new($aDateObject, $aWorkdayCalendar);
 
 We try to provide the same constructors as the base `Date` class, plus another to create `Workdate`s from regular `Date`s. Thus, we can create a `Workdate` in 4 different ways, from named and positional parameters, and by using a `Date` or a `DateTime` object for specifying the date. In all cases, the calendar is optional, and if it is not specified a default calendar will be applied to the new `Workdate`.
 
-`method succ`
--------------
+method succ
+-----------
 
 Returns the next workdate.
 
-`method pred`
--------------
+method pred
+-----------
 
 Returns the previous workdate.
 
-`method is-workday`
--------------------
+method is-workday
+-----------------
 
 Returns True if the workdate is not a holiday and is not part of the weekend.
 
-`method is-weekend`
--------------------
+method is-weekend
+-----------------
 
 Returns True if the workdate is not part of the workweek.
 
-`method is-holiday`
--------------------
+method is-holiday
+-----------------
 
 Returns True if the workdate is reported as a holiday.
 
-`method workdays-away(Int $days)`
----------------------------------
+method workdays-away(Int $days)
+-------------------------------
 
 Returns the workdate that is `$days` workdays from the given workdate.
 
-`method workdays-to(Date $target)`
-----------------------------------
+method workdays-to(Date $target)
+--------------------------------
 
 Return the number of workdays until `$target`.
 
-`method raku`
--------------
+method raku
+-----------
 
 Returns a string representing the contents of the `Workdate` attributes.
 
 OPERATORS
 =========
 
-Comparison: `$WorkdayCalendar_1 B<eq> $WorkdayCalendar_2`
----------------------------------------------------------
+Comparison: eq
+--------------
 
 Compares two calendars and returns True if they are equivalent. For that, they must have the same holidays and the same workweek. For instance, this would be as if they used the same calendar file.
 
 You can use the `range` method for `WorkdayCalendar` objects to compare smaller periods of time instead of a whole `WorkdayCalendar`.
 
-Comparison: `$WorkdayCalendar_1 B<ne> $WorkdayCalendar_2`
----------------------------------------------------------
+Comparison: ne
+--------------
 
 Returns the opposite of `eq`.
 
-Arithmetic: `Workdate $wd1 B<-> Workdate $wd2`
-----------------------------------------------
+Arithmetic: infix -
+-------------------
 
 Returns the difference, in workdays, between `$wd1` and `$wd2`.
 

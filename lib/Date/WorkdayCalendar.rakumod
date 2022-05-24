@@ -341,9 +341,9 @@ C<H:>) is not well defined, it is ignored.
 
 Lines starting with C<#> are comments and will be ignored when parsing the file.
 
-=head1 C<WorkdayCalendar> class
+=head1 WorkdayCalendar class
 
-=head2 C<method new>
+=head2 method new
 
 =begin code :lang<raku>
 
@@ -357,28 +357,28 @@ calendar format specified above. If a filename is not specified, the
 calendar will have no holidays and a default workweek of B<Mon>, B<Tue>,
 B<Wed>, B<Thu>, B<Fri>.
 
-=head2 C<method clear>
+=head2 method clear
 
 Empties the information for holidays and workdays, and resets the
 workweek to the default: B<Mon>, B<Tue>, B<Wed>, B<Thu>, B<Fri>.
 
-=head2 C<method read(Str $calendar_filename)>
+=head2 method read(Str $calendar_filename)
 
 Reads the data of holidays and workdays from a calendar file.
 
-=head2 C<method is-workday(Date $day)>
+=head2 method is-workday(Date $day)
 
 Returns C<True> if the day is part of the workweek and not a holiday.
 
-=head2 C<method is-weekend(Date $day)>
+=head2 method is-weekend(Date $day)
 
 Returns C<True> if the day is not part of the workweek.
 
-=head2 C<method is-holiday(Date $day)>
+=head2 method is-holiday(Date $day)
 
 Returns C<True> if the day has been defined as holiday in the calendar file.
 
-=head2 C<method workdays-away(Date $start, Int $days)>
+=head2 method workdays-away(Date $start, Int $days)
 
 Returns a C<Date> that corresponds to the workday at which C<$days> working
 days have passed.  With this method you can ask questions like: "what is the
@@ -403,11 +403,11 @@ Return Value : Aug 1, 2011 (it is a Monday)
  
 This also works for a negative number of days.
 
-=head2 C<method workdays-to(Date $start, Date $target)>
+=head2 method workdays-to(Date $start, Date $target)
 
 Returns the 'distance', in workdays, of C<$start> and C<$target> dates.
 
-=head2 C<method networkdays(Date $start, Date $target)>
+=head2 method networkdays(Date $start, Date $target)
 
 Works like the C<workdays-to> method, but emulates the NETWORKDAYS function in
 Microsoft Excel.
@@ -427,7 +427,7 @@ Examples:
 
 =end code
 
-=head2 C<method range(Date $start, Date $end)>
+=head2 method range(Date $start, Date $end)
 
 Returns a part of a calendar as a new C<WorkdayCalendar> object, between the
 C<$start> and C<$end> dates, inclusive.  For example, if you have a calendar
@@ -435,7 +435,7 @@ that contains holiday information for 3 years, you can use C<range> to
 obtain a new calendar that covers a period of 6 months of these 3 years.
 Useful with the C<eq> operator for C<WorkdayCalendar> objects.
 
-=head2 C<method raku>
+=head2 method raku
 
 Returns a string representing the contents of the C<WorkdayCalendar> attributes.
 
@@ -471,7 +471,7 @@ my $next_day = $date.succ; # $next_day is Thursday, February 3, 2011
 
 =end code
 
-=head2 C<method new>
+=head2 method new
 
 =begin code :lang<raku>
 
@@ -490,41 +490,41 @@ by using a C<Date> or a C<DateTime> object for specifying the date. In all
 cases, the calendar is optional, and if it is not specified a default calendar
 will be applied to the new C<Workdate>.
 
-=head2 C<method succ>
+=head2 method succ
 
 Returns the next workdate.
 
-=head2 C<method pred>
+=head2 method pred
 
 Returns the previous workdate.
 
-=head2 C<method is-workday>
+=head2 method is-workday
 
 Returns True if the workdate is not a holiday and is not part of the weekend.
 
-=head2 C<method is-weekend>
+=head2 method is-weekend
 
 Returns True if the workdate is not part of the workweek.
 
-=head2 C<method is-holiday>
+=head2 method is-holiday
 
 Returns True if the workdate is reported as a holiday.
 
-=head2 C<method workdays-away(Int $days)>
+=head2 method workdays-away(Int $days)
 
 Returns the workdate that is C<$days> workdays from the given workdate.
 
-=head2 C<method workdays-to(Date $target)>
+=head2 method workdays-to(Date $target)
 
 Return the number of workdays until C<$target>.
 
-=head2 C<method raku>
+=head2 method raku
 
 Returns a string representing the contents of the C<Workdate> attributes.
 
 =head1 OPERATORS
 
-=head2 Comparison: C<$WorkdayCalendar_1 B<eq> $WorkdayCalendar_2>
+=head2 Comparison: eq
 
 Compares two calendars and returns True if they are equivalent.  For that,
 they must have the same holidays and the same workweek.  For instance, this
@@ -533,11 +533,11 @@ would be as if they used the same calendar file.
 You can use the C<range> method for C<WorkdayCalendar> objects to compare
 smaller periods of time instead of a whole C<WorkdayCalendar>.
 
-=head2 Comparison: C<$WorkdayCalendar_1 B<ne> $WorkdayCalendar_2>
+=head2 Comparison: ne
 
 Returns the opposite of C<eq>.
 
-=head2 Arithmetic: C<Workdate $wd1 B<-> Workdate $wd2>
+=head2 Arithmetic: infix -
 
 Returns the difference, in workdays, between C<$wd1> and C<$wd2>.
 
