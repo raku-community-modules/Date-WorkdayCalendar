@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions)
+[![Actions Status](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions) [![Actions Status](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions) [![Actions Status](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/Date-WorkdayCalendar/actions)
 
 NAME
 ====
